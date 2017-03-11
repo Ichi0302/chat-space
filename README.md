@@ -22,6 +22,7 @@ Things you may want to cover:
 -has_many :groups through: :group_users
 
 |culumns  |type   |
+|---------|-------|
 |id       |integer|
 |name     |string |
 |email    |text   |
@@ -35,9 +36,13 @@ Things you may want to cover:
 -belongs_to :group
 
 |culumns  |type   |
+|---------|-------|
 |id       |integer|
 |text     |text   |
 |image    |text   |
+|user_id  |integer|
+|group_id |integer|
+|timestamp|       |
 
 ## groups
 **association**
@@ -45,10 +50,23 @@ has_many :messages
 has_many :group_users
 belongs_to :users through: :group_users
 
+|columns  |type   |
+|---------|-------|
+|id       |integer|
+|group_name|string|
+|menber   |string |
+
+
 ## group_users
 **association**
 belongs_to :user
 belongs_to :group
+
+|columns  |type   |
+|---------|-------|
+|id       |integer|
+|user_id  |integer|
+|group_id |integer|
 
 
 
