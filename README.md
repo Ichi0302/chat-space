@@ -8,7 +8,7 @@
 
 |culumns  |type   |
 |---------|-------|
-|password |text   |
+|name     |string |
 |group_id |integer|
 
 
@@ -28,7 +28,7 @@
 **association**
 - has_many :messages
 - has_many :group_users
-- belongs_to :users through: :group_users
+- belongs_to :users,through: :group_users
 
 |columns  |type   |
 |---------|-------|
