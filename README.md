@@ -28,7 +28,7 @@
 **association**
 - has_many :messages
 - has_many :group_users
-- belongs_to :users,3through: :group_users
+- belongs_to :users,3#through: :group_users
 
 |columns  |type   |
 |---------|-------|
