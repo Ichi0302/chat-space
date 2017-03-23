@@ -8,15 +8,14 @@
           %h4 ichiro-iwasaki
           %i.fa.fa-gear
           %i.fa.fa-pencil-square-o
-        %ul
-          %li
-            .group-firstspace
-          %li
-            .group-name sample
-            .group-message good bye world!
-          %li
-            .group-name sample2
-            .group-message hello world!
+        %ul.content-left__group
+          %li.content-left__group--firstspace
+          %li.content-left__group--chat
+            .content-left__group--chat--groupname sample
+            .content-left__group--chat--groupmessage good bye world!
+          %li.content-left__group--chat
+            .content-left__group--chat--groupname sample2
+            .content-left__group--chat--groupmessage hello,world
       .content-right
         .content-right__group
           .content-right__group--groupzone
@@ -25,12 +24,12 @@
           .content-right__group--editbuttom Edit
         .content-right__chatsholder
           .content-right__chatsholder--firstspace
-          %ul
-            %li
+          %ul.content-right__chatsholder--chatspace
+            %li.content-right__chatsholder--chatspace--onechat
               .username ichiro-iwasaki
               .chatdate 2017/3/17 22:33:44
               .chattext よろしくお願いしまああああああああす！
-            %li
+            %li.content-right__chatsholder--chatspace--onechat
               .username ichiro-iwasaki
               .chatdate 2017/3/23 11:33:45
               .chattext THIS IS MY CHAT-SPACE
