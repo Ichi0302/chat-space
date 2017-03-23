@@ -1,3 +1,5 @@
+$color-white: #ffffff;
+
 .content {
 
   &-left {
@@ -14,7 +16,7 @@
         width: 300px;
 
         h4 {
-          color: #FFFFFF;
+          color: $color-white;
           font-size: 16px;
           font-weight: bold;
           vertical-align: middle;
@@ -24,32 +26,38 @@
 
         .fa.fa-pencil-square-o {
           font-size: 20px;
-          color: white;
+          color: $color-white;
           float: right;
           padding: 35px 0px 35px 0px;
         }
 
         .fa.fa-gear {
           font-size: 20px;
-          color: white;
+          color: $color-white;
           float: right;
           padding: 35px 20px 35px 10px;
         }
       }
     }
 
-    &__group {
+    ul {
+      li {
 
-      &--name {
-        font-size: 15px;
-        color: #FFFFFF;
-        padding: 20px 0 5px 20px
-      }
+        .group-firstspace {
+          height: 20px;
+        }
 
-      &--message {
-        font-size: 11px;
-        color: #FFFFFF;
-        padding: 0 0 40px 20px
+        .group-name {
+          font-size: 15px;
+          color: $color-white;
+          padding: 0 0 5px 20px
+        }
+
+        .group-message {
+          font-size: 11px;
+          color: $color-white;
+          padding: 0 0 40px 20px
+        }
       }
     }
   }
@@ -61,7 +69,7 @@
     float: left;
 
     &__group {
-      background-color: #ffffff;
+      background-color: $color-white;
       width: 100%;
       height:100px;
       border-bottom: 2px solid #eeeeee;
@@ -100,31 +108,32 @@
       height: calc(100vh - 100px - 90px - 2px);
       min-height: 100px;
 
-      &--onechat {
-        padding: 0 0 40px 40px;
+      &--firstspace {
+        height: 46px;
+      }
 
-        &--firstspace {
-          height: 46px;
-        }
+      ul {
+        li {
+          padding: 0 0 40px 40px;
+          .username {
+            float: left;
+            font-weight: bold;
+            height: 7px;
+          }
 
-        &--username {
-          float: left;
-          font-weight: bold;
-          height: 7px;
-        }
+          .chatdate{
+            color: #999999;
+            float: left;
+            padding: 7px 0 0 10px;
+            height: 4px;
+            font-size: 4px;
+          }
 
-        &--chatdate{
-          color: #999999;
-          float: left;
-          padding: 7px 0 0 10px;
-          height: 4px;
-          font-size: 4px;
-        }
-
-        &--chattext {
-          padding: 20px 0 0;
-          font-size: 6px;
-          clear: both;
+          .chattext {
+            padding: 20px 0 0;
+            font-size: 6px;
+            clear: both;
+          }
         }
       }
     }
@@ -136,7 +145,7 @@
       padding: 20px 0;
 
       input {
-        background-color: #ffffff;
+        background-color: $color-white;
         height: 50px;
         width: calc(100vw - 300px - 40px - 15px - 90px - 40px);
         margin: 0 15px 0 40px;
@@ -160,7 +169,7 @@
         float: left;
         text-align: center;
         p {
-          color: #ffffff;
+          color: $color-white;
           font-size: 20px;
           padding-top: 8px;
         }

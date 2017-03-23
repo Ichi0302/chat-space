@@ -8,27 +8,34 @@
           %h4 ichiro-iwasaki
           %i.fa.fa-gear
           %i.fa.fa-pencil-square-o
-        .content-left__group--name sample
-        .content-left__group--message good bye world!
+        %ul
+          %li
+            .group-firstspace
+          %li
+            .group-name sample
+            .group-message good bye world!
+          %li
+            .group-name sample2
+            .group-message hello world!
       .content-right
         .content-right__group
           .content-right__group--groupzone
             .content-right__group--groupzone--name sampleグループ
-            .content-right__group--groupzone--member Members: ichro-iwasaki
+            .content-right__group--groupzone--member Members: ichro-iwasaki haruki-yasui takato-tubouti
           .content-right__group--editbuttom Edit
         .content-right__chatsholder
-          .content-right__chatsholder--onechat
-            .content-right__chatsholder--onechat--firstspace
-            .content-right__chatsholder--onechat--username ichiro-iwasaki
-            .content-right__chatsholder--onechat--chatdate 2017/3/17 22:33:44
-            .content-right__chatsholder--onechat--chattext よろしくお願いしまああああああああす！
+          .content-right__chatsholder--firstspace
+          %ul
+            %li
+              .username ichiro-iwasaki
+              .chatdate 2017/3/17 22:33:44
+              .chattext よろしくお願いしまああああああああす！
+            %li
+              .username ichiro-iwasaki
+              .chatdate 2017/3/23 11:33:45
+              .chattext THIS IS MY CHAT-SPACE
         .content-right__bottom-bar
           %input(type="text" placeholder="type a message")
           %i.fa.fa-image
           .content-right__bottom-bar--sendbuttom
             %p send
-
-
-
-
-
