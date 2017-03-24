@@ -1,5 +1,6 @@
 @import "./reset";
-@import "./config/clearfix";
 @import "./config/variables";
+@import "./mixin/clearfix";
+@import "./alert";
 @import "./messages";
 @import "font-awesome";
