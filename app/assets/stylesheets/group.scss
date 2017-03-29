@@ -1,3 +1,8 @@
+body, html {
+  height: 100%;
+  background-color: #fafafa;
+}
+
 .chat-group-form {
   width: 980px;
   margin: 60px auto;
@@ -40,6 +45,7 @@
   }
 
   .chat-group-form__field {
+    @include clearfix();
     margin-top: 30px;
 
     .chat-group-form__field--left {
