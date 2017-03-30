@@ -10,13 +10,14 @@ class GroupsController < ApplicationController
 
 
   def create
-    group = Group.create(tweet_params)
+    @group = Group.new
+    group = Group.create(group_params)
     if group.save
       flash[:notice] = "グループを作成しました。"
-      redirect_to controller: :groups, action: :index
+      redirect_to root_path
     else
       flash[:alert] = "グループを作成できませんでした。"
-      redirect_to controller: :group, action: :new
+      render 'groups/new'
     end
   end
 
@@ -24,7 +25,7 @@ class GroupsController < ApplicationController
   end
 
   private
-  def tweet_params
+  def group_params
     params.require(:group).permit(:name, {user_ids: []})
   end
 
