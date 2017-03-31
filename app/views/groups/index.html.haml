@@ -10,12 +10,14 @@
           %i.fa.fa-pencil-square-o
         %ul.content-left__group
           %li.content-left__group--firstspace
-          %li.content-left__group--chat
-            .content-left__group--chat--groupname sample
-            .content-left__group--chat--groupmessage good bye world!
-          %li.content-left__group--chat
-            .content-left__group--chat--groupname sample2
-            .content-left__group--chat--groupmessage hello,world
+          - @groups.each do |group|
+            = render partial: "groups", locals: {group: group}
+          / %li.content-left__group--chat
+          /   .content-left__group--chat--groupname sample
+          /   .content-left__group--chat--groupmessage good bye world!
+          / %li.content-left__group--chat
+          /   .content-left__group--chat--groupname sample2
+          /   .content-left__group--chat--groupmessage hello,world
       .content-right
         .content-right__group
           .content-right__group--groupzone
