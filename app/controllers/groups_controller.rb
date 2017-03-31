@@ -1,18 +1,24 @@
 class GroupsController < ApplicationController
-  def index
+  before_action :create_group, only: [:new, :create]
+  before_action :set_group, only: [:edit, :update]
 
+  def create_group
+    @group = Group.new
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
+  def index
   end
 
   def new
-    @group = Group.new
     @group.users << current_user
   end
 
-
   def create
-    @group = Group.new
-    group = Group.create(group_params)
-    if group.save
+    if Group.create(group_params)
       redirect_to root_path, flash: {notice: "グループを作成しました。"}
     else
       flash[:alert] = "グループを作成できませんでした。"
@@ -21,12 +27,15 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    group = Group.find(params[:id])
-    tweet.update(group_params)
+    if @group.update(group_params)
+      redirect_to root_path, flash: {notice: "グループを編集しました。"}
+    else
+      flash[:alert] = "グループを編集できませんでした。"
+      render :edit
+    end
   end
 
   private
