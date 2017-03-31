@@ -21,6 +21,12 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
+  end
+
+  def update
+    group = Group.find(params[:id])
+    tweet.update(group_params)
   end
 
   private
