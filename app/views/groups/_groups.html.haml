@@ -1,4 +1,5 @@
-%li.content-left__group--chat
-  .content-left__group--chat--groupname
-    = group.name
-  .content-left__group--chat--groupmessage hellow,world
+= link_to group_messages_path(group.id) do
+  %li.content-left__group--chat
+    .content-left__group--chat--groupname
+      = group.name
+    .content-left__group--chat--groupmessage hellow,world

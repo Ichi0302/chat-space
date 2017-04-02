@@ -18,9 +18,14 @@
       .content-right
         .content-right__group
           .content-right__group--groupzone
-            .content-right__group--groupzone--name sampleグループ
-            .content-right__group--groupzone--member Members: ichro-iwasaki haruki-yasui takato-tubouti
-          .content-right__group--editbuttom Edit
+            .content-right__group--groupzone--name
+              = @group.name
+            .content-right__group--groupzone--member
+              Members:
+            - @group_users.each do |users|
+              = users.name
+          = link_to edit_group_path(@group.id) do
+            .content-right__group--editbuttom Edit
         .content-right__chatsholder
           .content-right__chatsholder--firstspace
           %ul.content-right__chatsholder--chatspace
