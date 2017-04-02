@@ -1,25 +1,19 @@
 class GroupsController < ApplicationController
-  before_action :create_group, only: [:new, :create]
   before_action :set_group, only: [:edit, :update]
 
-  def create_group
-    @group = Group.new
-  end
-
-  def set_group
-    @group = Group.find(params[:id])
-  end
-
   def index
-    @groups = Group.order('id ASC')
+    @groups = current_user.groups
   end
 
   def new
+    @group = Group.new
     @group.users << current_user
   end
 
   def create
-    if Group.create(group_params)
+    @group = Group.new
+    group = Group.create(group_params)
+    if group.save
       redirect_to root_path, flash: {notice: "グループを作成しました。"}
     else
       flash[:alert] = "グループを作成できませんでした。"
@@ -44,4 +38,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, {user_ids: []})
   end
 
+  def set_group
+    @group = Group.find(params[:id])
+  end
 end
