@@ -1,0 +1,12 @@
+.content-left
+  .content-left__user--name
+    %h4
+      = current_user.name
+    = link_to edit_user_registration_path do
+      %i.fa.fa-gear
+    = link_to new_group_path do
+      %i.fa.fa-pencil-square-o
+  %ul.content-left__group
+    %li.content-left__group--firstspace
+    - groups.each do |group|
+      = render partial: "groups", locals: {group: group}

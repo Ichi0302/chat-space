@@ -3,18 +3,7 @@
   %head
   %body
     .content
-      .content-left
-        .content-left__user--name
-          %h4
-            = current_user.name
-          = link_to edit_user_registration_path do
-            %i.fa.fa-gear
-          = link_to new_group_path do
-            %i.fa.fa-pencil-square-o
-        %ul.content-left__group
-          %li.content-left__group--firstspace
-          - @groups.each do |group|
-            = render partial: "groups", locals: {group: group}
+      = render partial: "groups/sidebar", locals: {groups: @groups}
       .content-right
         .content-right__group
           .content-right__group--groupzone
@@ -22,7 +11,7 @@
               = @group.name
             .content-right__group--groupzone--member
               Members:
-              - @group_users.each do |users|
+              - @users.each do |users|
                 = users.name
           = link_to edit_group_path(@group.id) do
             .content-right__group--editbuttom Edit
