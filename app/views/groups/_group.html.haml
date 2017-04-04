@@ -2,4 +2,5 @@
   %li.content-left__group--chat
     .content-left__group--chat--groupname
       = group.name
-    .content-left__group--chat--groupmessage hellow,world
+    .content-left__group--chat--groupmessage
+      = group.messages.last.try(:text) || "まだメッセージはありません。"

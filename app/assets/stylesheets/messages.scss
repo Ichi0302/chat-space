@@ -39,6 +39,8 @@
     }
 
     &__group {
+      overflow: scroll;
+
       &--firstspace {
           height: 20px;
       }
@@ -68,7 +70,7 @@
 
     &__group {
       background-color: $white;
-      width: 100%;
+      min-width: 500px;
       height:100px;
       border-bottom: 2px solid #eeeeee;
 
@@ -102,9 +104,10 @@
 
     &__chatsholder {
       background-color: #fafafa;
-      width: 100%;
+      min-width: 500px;
       height: calc(100vh - 100px - 90px - 2px);
       min-height: 100px;
+      overflow: scroll;
 
       &--firstspace {
         height: 46px;
@@ -138,7 +141,7 @@
 
     &__bottom-bar {
       background-color: #dddddd;
-      width: 100%;
+      min-width: 500px;
       height: 50px;
       padding: 20px 0;
 
@@ -146,6 +149,7 @@
         background-color: $white;
         height: 50px;
         width: calc(100vw - 300px - 40px - 15px - 90px - 40px);
+        min-width: 330px;
         margin: 0 15px 0 40px;
         float: left;
       }
@@ -168,7 +172,7 @@
         text-align: center;
         color: $white;
         font-size: 20px;
-        padding-bottom: 5エィtpx;
+        padding-bottom: 5px;
       }
     }
   }
