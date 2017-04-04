@@ -1,2 +1,33 @@
-%h1 Messages#index
-%p Find me in app/views/messages/index.html.haml
+!!!
+%haml
+  %head
+  %body
+    .content
+      = render partial: "groups/sidebar", locals: {groups: @groups}
+      .content-right
+        .content-right__group
+          .content-right__group--groupzone
+            .content-right__group--groupzone--name
+              = @group.name
+            .content-right__group--groupzone--member
+              Members:
+              - @users.each do |users|
+                = users.name
+          = link_to edit_group_path(@group) do
+            .content-right__group--editbuttom Edit
+        .content-right__chatsholder
+          .content-right__chatsholder--firstspace
+          %ul.content-right__chatsholder--chatspace
+            %li.content-right__chatsholder--chatspace--onechat
+              .username ichiro-iwasaki
+              .chatdate 2017/3/17 22:33:44
+              .chattext よろしくお願いしまああああああああす！
+            %li.content-right__chatsholder--chatspace--onechat
+              .username ichiro-iwasaki
+              .chatdate 2017/3/23 11:33:45
+              .chattext THIS IS MY CHAT-SPACE
+        .content-right__bottom-bar
+          %input(type="text" placeholder="type a message")
+          %i.fa.fa-image
+          .content-right__bottom-bar--sendbuttom
+            %p send
