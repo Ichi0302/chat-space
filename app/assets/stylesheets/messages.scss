@@ -142,7 +142,7 @@
       height: 50px;
       padding: 20px 0;
 
-      input {
+      &--textplace {
         background-color: $white;
         height: 50px;
         width: calc(100vw - 300px - 40px - 15px - 90px - 40px);
@@ -166,11 +166,9 @@
         width: 90px;
         float: left;
         text-align: center;
-        p {
-          color: $white;
-          font-size: 20px;
-          padding-top: 8px;
-        }
+        color: $white;
+        font-size: 20px;
+        padding-bottom: 5エィtpx;
       }
     }
   }
