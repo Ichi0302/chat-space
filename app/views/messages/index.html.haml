@@ -11,7 +11,7 @@
               = @group.name
             .content-right__group--groupzone--member
               Members:
-              - @users.each do |users|
+              - @group.users.each do |users|
                 = users.name
           = link_to edit_group_path(@group) do
             .content-right__group--editbuttom Edit
