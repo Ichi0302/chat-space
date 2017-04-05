@@ -11,23 +11,16 @@
               = @group.name
             .content-right__group--groupzone--member
               Members:
-              - @users.each do |users|
+              - @group.users.each do |users|
                 = users.name
           = link_to edit_group_path(@group) do
             .content-right__group--editbuttom Edit
         .content-right__chatsholder
           .content-right__chatsholder--firstspace
           %ul.content-right__chatsholder--chatspace
-            %li.content-right__chatsholder--chatspace--onechat
-              .username ichiro-iwasaki
-              .chatdate 2017/3/17 22:33:44
-              .chattext よろしくお願いしまああああああああす！
-            %li.content-right__chatsholder--chatspace--onechat
-              .username ichiro-iwasaki
-              .chatdate 2017/3/23 11:33:45
-              .chattext THIS IS MY CHAT-SPACE
+            = render @messages
         .content-right__bottom-bar
-          %input(type="text" placeholder="type a message")
-          %i.fa.fa-image
-          .content-right__bottom-bar--sendbuttom
-            %p send
+          = form_for [@group, @message] do |f|
+            = f.text_field :text, placeholder: "type a message", class: "content-right__bottom-bar--textplace"
+            %i.fa.fa-image
+            = f. submit "send", class: "content-right__bottom-bar--sendbuttom"
