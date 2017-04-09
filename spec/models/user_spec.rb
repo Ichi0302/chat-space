@@ -1,11 +1,3 @@
-#nameが入っているか
-#emailが入っているか
-#passwordが入っているか
-#password_confirmationが入っているか
-#emailが重複していないか
-
-#重複、全部入っているか
-
 require 'rails_helper'
 
 describe User do
