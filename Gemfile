@@ -7,6 +7,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'pry-rails'
+gem 'rake', '< 11.0'
 
 #Haml適用
 gem 'haml-rails'
@@ -20,6 +21,9 @@ gem 'turbolinks'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'faker'
 end
 
 group :development do
