@@ -32,6 +32,17 @@ describe User do
       expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません。")
     end
 
+    it "is invalid with a password that has less than 5 characters" do
+      user = build(:user, password: "aaaaa")
+      user.valid?
+      expect(user.errors[:password]).to include("は6文字以上で入力してください。")
+    end
+
+    it "is valid with a password that has more than 6 characters" do
+      user = build(:user, password: "aaaaaa", password_confirmation: "aaaaaa")
+      expect(user).to be_valid
+    end
+
     it "is invalid with a duplicate email" do
       user = create(:user)
       another_user = build(:user, email: user.email)
