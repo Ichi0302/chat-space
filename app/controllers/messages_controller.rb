@@ -27,6 +27,6 @@ class MessagesController < ApplicationController
   end
 
   def set_message
-    @messages = @group.messages
+    @messages = @group.messages.order('created_at DESC')
   end
 end
