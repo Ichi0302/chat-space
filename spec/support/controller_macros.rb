@@ -5,5 +5,3 @@ module ControllerMacros
     sign_in user
   end
 end
-
-
