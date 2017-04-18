@@ -4,7 +4,8 @@ describe MessagesController do
 
   let(:user) { create(:user) }
   let(:group) { create(:group) }
-  let(:message) { build(:message) }
+  let(:message) { create(:message) }
+  let(:messages) { create_list(:message, 3)}
 
   before do
     sign_in user
