@@ -5,6 +5,7 @@ FactoryGirl.define do
     image         {Faker::Avatar.image}
     user_id       {Faker::Number.number(1)}
     group_id      {Faker::Avatar.image}
+
   end
 
 end
