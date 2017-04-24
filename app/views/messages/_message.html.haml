@@ -3,5 +3,16 @@
     = message.user.name
   .chatdate
     = message.created_at
-  .chattext
-    = message.text
+  - if message.text
+    .chattext
+      = message.text
+  - if message.image
+    = image_tag(message.image)
+
+
+
+/ 　<% if @user.image? %>
+/ 　　<%= image_tag @user.image.thumb.url %>
+/ 　<% else %>
+/ 　　<%= image_tag 'noimage.gif' %>
+/ 　<% end %>
