@@ -4,18 +4,17 @@ $(function() {
     return html;
   };
 
-  $('.content-right__bottom-bar--sendbuttom').click(function(e) {
+  $('#new_message').on("submit", function(e) {
     e.preventDefault();
-    var text = $('.content-right__bottom-bar--textplace').val();
-    if(text != ""){
+    var formData = new FormData($(this)[0]);
+    console.log(formData);
+    if(formData != ""){
       $.ajax({
         url: './messages',
         type: 'POST',
-        data: {
-          message: {
-            text: text
-          }
-        },
+        data: formData,
+        processData: false,
+        contentType: false,
         dataType: 'json'
       })
       .done(function(data){
