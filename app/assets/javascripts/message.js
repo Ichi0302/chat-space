@@ -1,39 +1,40 @@
 $(function() {
   function buildHTML(message){
-    var html = $('<li class="content-right__chatsholder--chatspace--onechat">');
+    var html = $('<li class="content-right__chatsholder--chatspace--onechat">').append(
+           `<div class="username">
+              ${message.name}
+            </div>
+            <div class="chatdate">
+              ${message.created_at}
+            </div>
+            <div class="chattext">
+              ${message.text}
+            </div>`
+          );
     return html;
   };
 
   $('#new_message').on("submit", function(e) {
     e.preventDefault();
-    var formData = new FormData($(this)[0]);
+    var text = $('.content-right__bottom-bar--textplace').val();
 
     $.ajax({
       url: './messages',
       type: 'POST',
-      data: formData,
-      processData: false,
-      contentType: false,
+      data: {
+        message: {
+          text: text
+        }
+      },
       dataType: 'json'
     })
     .done(function(data){
-      var html = buildHTML(data);
-      $('.content-right__chatsholder--chatspace').prepend(html.append(
-           `<div class="username">
-              ${data.name}
-            </div>
-            <div class="chatdate">
-              ${data.created_at}
-            </div>
-            <div class="chattext">
-              ${data.text}
-            </div>`
-          ));
-      $('.content-right__bottom-bar--textplace').val('');
+      $('.content-right__chatsholder--chatspace').prepend(buildHTML(data));
       })
     .fail (function(data){
       alert('メッセージを入力してください。');
     });
+    this.reset();
     return false;
   });
 });
