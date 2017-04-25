@@ -8,11 +8,3 @@
       = message.text
   - if message.image
     = image_tag(message.image)
-
-
-
-/ 　<% if @user.image? %>
-/ 　　<%= image_tag @user.image.thumb.url %>
-/ 　<% else %>
-/ 　　<%= image_tag 'noimage.gif' %>
-/ 　<% end %>
