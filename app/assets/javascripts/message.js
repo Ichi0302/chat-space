@@ -29,7 +29,7 @@ $(function() {
       dataType: 'json'
     })
     .done(function(data){
-      $('.content-right__chatsholder--chatspace').prepend(buildHTML(data));
+      $('.content-right__chatsholder--chatspace').append(buildHTML(data));
       })
     .fail (function(data){
       alert('メッセージを入力してください。');
