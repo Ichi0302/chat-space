@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     @message = current_user.messages.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html{redirect_to group_messages_path(@message.group_id)}
+        format.html{redirect_to group_messages_path(@group)}
         format.json
       end
     else
@@ -30,6 +30,6 @@ class MessagesController < ApplicationController
   end
 
   def set_message
-    @messages = @group.messages.order('created_at DESC')
+    @messages = @group.messages
   end
 end
