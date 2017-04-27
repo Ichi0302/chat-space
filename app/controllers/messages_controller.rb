@@ -9,7 +9,10 @@ class MessagesController < ApplicationController
   def create
     @message = current_user.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path
+      respond_to do |format|
+        format.html{redirect_to group_messages_path(@group)}
+        format.json
+      end
     else
       flash[:alert] = "メッセージを入力してください。"
       render :index
@@ -27,6 +30,6 @@ class MessagesController < ApplicationController
   end
 
   def set_message
-    @messages = @group.messages.order('created_at DESC')
+    @messages = @group.messages
   end
 end
