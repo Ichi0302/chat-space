@@ -10,30 +10,30 @@ $(function() {
             </div>
             <div class="chattext">
               ${message.text}
-            </div>`
+            </div>
+              ${messageImage}
+              `
           );
     return html;
   };
 
   $('#new_message').on("submit", function(e) {
     e.preventDefault();
+    var formData = new FormData($(this)[0]);
     var text = $('.content-right__bottom-bar--textplace').val();
-
     $.ajax({
       url: './messages',
       type: 'POST',
-      data: {
-        message: {
-          text: text
-        }
-      },
+      data: formData,
+      processData: false,
+      contentType: false,
       dataType: 'json'
     })
     .done(function(data){
       $('.content-right__chatsholder--chatspace').append(buildHTML(data));
       })
     .fail (function(data){
-      alert('メッセージを入力してください。');
+      alert('メッセージを入力してくださいいいい。');
     });
     this.reset();
     return false;
