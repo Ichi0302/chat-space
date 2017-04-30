@@ -33,7 +33,7 @@ $(function() {
       $('.content-right__chatsholder--chatspace').append(buildHTML(data));
       })
     .fail (function(data){
-      alert('メッセージを入力してくださいいいい。');
+      alert('メッセージを入力してください。');
     });
     this.reset();
     return false;
