@@ -3,8 +3,6 @@
     = message.user.name
   .chatdate
     = message.created_at
-  - if message.text
-    .chattext
-      = message.text
-  - if message.image
-    = image_tag(message.image)
+  .chattext
+    = message.text
+  = image_tag(message.image)

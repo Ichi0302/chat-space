@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(message){
-    var messageImage = message.image ? `<img src="${message.image}" alt="hoge">` : ``;
+    var messageImage = message.image ? `<img src="${message.image}" alt="写真">` : ``;
     var html = $('<li class="content-right__chatsholder--chatspace--onechat">').append(
            `<div class="username">
               ${message.name}
@@ -33,7 +33,7 @@ $(function() {
       $('.content-right__chatsholder--chatspace').append(buildHTML(data));
       })
     .fail (function(data){
-      alert('メッセージを入力してくださいいいい。');
+      alert('メッセージを入力してください。');
     });
     this.reset();
     return false;
