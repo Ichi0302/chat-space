@@ -8,6 +8,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'pry-rails'
 gem 'rake', '< 11.0'
+gem 'carrierwave'
+gem 'rmagick'
 
 #Haml適用
 gem 'haml-rails'
@@ -25,7 +27,6 @@ group :development, :test do
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'faker'
   gem 'rails-controller-testing'
-  gem 'devise'
 end
 
 group :development do

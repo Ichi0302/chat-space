@@ -22,5 +22,7 @@
         .content-right__bottom-bar
           = form_for [@group, @message] do |f|
             = f.text_field :text, placeholder: "type a message", class: "content-right__bottom-bar--textplace"
-            %i.fa.fa-image
-            = f. submit "send", class: "content-right__bottom-bar--sendbuttom"
+            = f.label :image do
+              %i.fa.fa-image
+            = f.file_field :image, style: "display: none;", class: "content-right__bottom-bar--photoplace"
+            = f.submit "send", class: "content-right__bottom-bar--sendbuttom"
