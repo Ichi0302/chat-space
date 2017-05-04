@@ -41,7 +41,6 @@ $(function(){
         }
       })
       .done(function(data) {
-        console.log(data);
         var html = searchUserResult(data);
         $('#user-search-result').html(html);
       });
