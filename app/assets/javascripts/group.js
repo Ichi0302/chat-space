@@ -34,20 +34,20 @@ $(function(){
   $('#user-search-field').on('keyup', function() {
     var ajaxSearch = function(){
       $.ajax({
-        type: 'GET'
-        url: 'users'
+        type: 'GET',
+        url: '/users/search',
         data: {
           keyword: name
         }
       })
       .done(function(data) {
+        console.log(data);
         var html = searchUserResult(data);
         $('#user-search-result').html(html);
       });
     };
 
     var name = $(this).val();
-    console.log(name);
 
     if (name != preName && name.length != 0) {
       clearTimeout(preFunc);
@@ -64,7 +64,7 @@ $(function(){
     $('#chat-group-users').append(html);
   });
 
-  $(document).on('click', '.user-search-add', function(){
+  $(document).on('click', '.user-search-remove', function(){
     var id = $(this).data('user-id');
     $('.user-search-add[data-user-id=' + id + ']').parent().show();
     $(this).parent().remove();
