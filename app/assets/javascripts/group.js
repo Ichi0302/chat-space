@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   var preName;
   var preFunc;
 
@@ -74,11 +74,3 @@ $(function(){
   });
 
 });
-
-
-
-
-
-
-
-
