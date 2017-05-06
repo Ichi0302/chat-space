@@ -43,7 +43,11 @@ $(function(){
       .done(function(data) {
         var html = searchUserResult(data);
         $('#user-search-result').html(html);
+      })
+      .fail(function() {
+        alert('エラーが発生しました。');
       });
+      return false;
     };
 
     var name = $(this).val();
