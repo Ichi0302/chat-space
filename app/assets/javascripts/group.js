@@ -17,7 +17,6 @@ $(document).on('turbolinks:load', function(){
     return html;
   }
 
-
   function addUserList(id, name){
   var html = '<div class="chat-group-user clearfix" id="chat-group-user-' + id + '">' +
              '<input type="hidden" name="group[user_ids][]" value="' + id + '">' +
@@ -33,6 +32,8 @@ $(document).on('turbolinks:load', function(){
 
   $('#user-search-field').on('keyup', function() {
     var ajaxSearch = function(){
+    var name = $(this).val();
+
       $.ajax({
         type: 'GET',
         url: '/users/search',
@@ -50,8 +51,8 @@ $(document).on('turbolinks:load', function(){
       return false;
     };
 
-    var name = $(this).val();
-
+    var preName;
+    var preFunc;
     if (name != preName && name.length != 0) {
       clearTimeout(preFunc);
       preFunc = setTimeout(ajaxSearch, 500);
