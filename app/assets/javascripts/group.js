@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function(){
 
   function searchUserResult(users) {
     var html = '';
-    $.each(users, function(index, user) {
+    $.each(users['users'], function(index, user) {
       html += '<div class="chat-group-user clearfix">' +
                 '<p class="chat-group-user__name">' +
                   user.name +
