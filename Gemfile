@@ -10,6 +10,7 @@ gem 'pry-rails'
 gem 'rake', '< 11.0'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
 
 #Haml適用
 gem 'haml-rails'
