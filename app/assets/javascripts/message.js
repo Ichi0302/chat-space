@@ -1,4 +1,6 @@
 $(function() {
+  var path = location.pathname;
+
   function buildHTML(message){
     var messageImage = message.image ? `<img src="${message.image}" alt="${message.image}">` : ``;
     var html = $('<li class="content-right__chatsholder--chatspace--onechat">').append(
@@ -38,4 +40,27 @@ $(function() {
     this.reset();
     return false;
   });
+
+  if (path.match('/messages')) {
+    var timer = setInterval(function(){
+      var messages = $('.content-right__chatsholder--chatspace');
+      var lastMessageId = messages.children().last().data('messageId');
+      console.log(lastMessageId);
+      $.ajax({
+        type: 'GET',
+        url: path,
+        data: {
+          last_message_id: lastMessageId
+        },
+        dataType: 'json'
+      })
+      .done(function(data) {
+        console.log(data);
+        // $.each(data, function(i, message) {
+        //   var thml = buildTHML(message);
+        //   message.append(html);
+        // });
+      });
+    },5000)
+  }
 });
