@@ -45,7 +45,6 @@ $(function() {
     var timer = setInterval(function(){
       var messages = $('.content-right__chatsholder--chatspace');
       var lastMessageId = messages.children().last().data('messageId');
-      console.log(lastMessageId);
       $.ajax({
         type: 'GET',
         url: path,
@@ -55,11 +54,10 @@ $(function() {
         dataType: 'json'
       })
       .done(function(data) {
-        console.log(data);
-        // $.each(data, function(i, message) {
-        //   var thml = buildTHML(message);
-        //   message.append(html);
-        // });
+        $.each(data, function(i, message) {
+          var thml = buildTHML(message);
+          message.append(html);
+        });
       });
     },5000)
   }
