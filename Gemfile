@@ -9,7 +9,7 @@ gem 'devise'
 gem 'pry-rails'
 gem 'rake', '< 11.0'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 gem 'fog'
 
 #Haml適用
