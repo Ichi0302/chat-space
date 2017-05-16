@@ -11,7 +11,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   process :resize_to_limit => [500, 500]
 
